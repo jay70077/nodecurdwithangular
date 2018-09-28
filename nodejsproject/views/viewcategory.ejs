@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<% include header%>    
+ 
+ <script src="./js/main.js"></script>
+</head>
+
+<body id="login" ng-app="myapp" ng-controller="mycntr">
+     <div class="container">
+     	<div class="row">
+           <div class="col-md-12">
+           	  	<h2 class="text-center">
+           	  		Total Books Available
+           	  	</h2>
+           	  	<table class="table table-responsive">
+           	  	  <tr>
+           	  	  	<th>Book Name</th>
+           	  	  	<th>Book Description</th>
+           	  	  	<th>Edit</th>
+           	  	  </tr>
+           	  	  <tr ng-repeat="x in booksdata | filter:search">
+           	  	  	 <td>{{x.bookname}}</td>
+           	  	  	 <td>{{x.description}}</td>
+           	  	  	 <td><a  ng-click="update(x._id)" href="#">Edit</a> | <a class="red" ng-click="delete(x._id)" href="#">Delete</a></td>
+           	  	  	 
+           	  	  </tr>
+           	  	</table>
+                
+                <h2>{{datadeleted}}</h2>
+           </div>
+           <div class="col-md-12">
+             <table class="table table-responsive">
+                  <tr>
+                    <td>Bookname:</td>
+                    <td> <input type="text" style="color:#000;" ng-model="bookname1"></td>
+                
+                    <td> Description:</td>
+                    <td><textarea type="text" style="color:#000;" ng-model="description1"></textarea></td>
+                  
+                    <td> <a href="#" ng-click="change">Change</a> | <a href="#" ng-click="save()">Save</a></td>
+                  </tr>
+                </table>
+           </div>
+     	</div>
+
+     </div>
+
+</body>
+
+</html>

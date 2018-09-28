@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<% include header%>    
+
+</head>
+
+<body id="login" ng-app="">
+     <div class="container">
+      <div class="row">
+      	<div class="com-md-8 com-md-offset-2">
+      		<form method="POST" action="/createdata" name="myform" novalidate>
+     	          <div class="form-group">
+     	          <label for="book"> Enter Book Name</label>
+                      <input class="form-control" type="text" placeholder="Enter Book Name" name="bookname" ng-model="bookname" id="book" required/>
+                       <span ng-show="submitted && myform.bookname.$error.required">Enter bookname</span>
+                       
+                   </div>
+                  <div class="form-group">
+     	          <label for="bookdescription"> Enter Book Description</label>
+                      <textarea class="form-control" type="text" placeholder="Enter Book Description" name="description" ng-model="bookdescription" id="bookdescription" required/> 
+                      </textarea> 
+                       <span ng-show="submitted && myform.description.$error.required">Enter Description</span>
+                        
+                  </div> 
+                    <div class="form-group">
+                    	<input class="btn btn-primary" type="submit" ng-click="submit()"  name="submit" value="Add Category">
+                    </div>
+
+            </form>
+      	</div>
+      </div>
+     	
+
+     </div>
+     
+
+
+</body>
+
+</html>
+<script>
+	// var newapp=angular.module('addapp',[]);
+ //  newapp.controller('addcntr',function($scope,$http){
+ //           $scope.submitclick=function(){
+ //            $http({
+ //              method:"POST",
+ //              url:"/createdata"
+ //            }).success(function(result){
+ //              console.log(result);
+                 
+ //                  $scope.submitted="data added succesfully";
+               
+                
+ //            })
+ //        }
+
+ //  });
+</script>
